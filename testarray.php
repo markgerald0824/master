@@ -7,3 +7,5 @@
     foreach ($result as $data) {
         echo $data . "<br>";
     }
+    
+?>

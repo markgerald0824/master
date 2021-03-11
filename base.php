@@ -1,7 +1,6 @@
 <?php
 
-function base64_decoder($input)
-{
+function base64_decoder( $input ) {
     $strict = false;
     $inl = strlen($input);
     $in = unpack('C*', $input);
@@ -93,3 +92,5 @@ function base64_decoder($input)
 }
 
 $this->base64_decoder('');
+
+?>

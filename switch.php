@@ -1,5 +1,4 @@
 <?php
-
 	$bool = true;
 
 	switch ($bool) {
