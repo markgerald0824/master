@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #timer_label:before {
+            content: "Hours : Seconds";
+            font-size: 30px;
+            position: absolute;
+            margin-top: 100px !important;
+            margin-left: 30px !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer_label" style="font-size: 100px;"><span id="time">15:00</span></div>
+</body>
+</html>
+
+<script>
+    function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        var expired = false;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            if (minutes == 0 && seconds == 0) {
+                expired = true;
+            }
+
+            if (!expired) {
+                display.textContent = minutes + ":" + seconds;
+            } else {
+                display.textContent = 00 + ":" + 00;
+            }
+            
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        var fiveMinutes = 60 * .02,
+        display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
+    };
+</script>

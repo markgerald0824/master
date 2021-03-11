@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="0">
+        <tr>
+            <td>
+                <small>ORDER NUMBER:</small>
+                <h3 style="margin-top: -5px;"><?php echo $order->get_order_number(); ?></h3>
+            </td>
+            <td>
+                <small>DATE:</small>
+                <h3 style="margin-top: -5px;"><?php echo wc_format_datetime( $order->get_date_created()); ?></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <small>EMAIL:</small>
+                <h3 style="margin-top: -5px;"><?php echo $order->get_billing_email(); ?></h3>
+            </td>
+            <td>
+                <small>TOTAL:</small>
+                <h3 style="margin-top: -5px;"><?php echo $order->get_formatted_order_total(); ?></h3>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <small>PAYMENT METHOD:</small>
+                <h3 style="margin-top: -5px;"><?php echo $order->get_payment_method_title(); ?></h3>
+            </td>
+        </tr>
+    </table>
+    <ul style="list-style-type: none; display: inline;">
+        <li>
+            <small>ORDER NUMBER:</small>
+            <h3 style="margin-top: -5px;"><?php echo $order->get_order_number(); ?></h3>
+        </li>
+        <li>
+            <small>DATE:</small>
+            <h3 style="margin-top: -5px;"><?php echo wc_format_datetime( $order->get_date_created()); ?></h3>
+        </li>
+    </ul>
+    <ul style="list-style-type: none; display: inline;">
+        <li>
+            <small>EMAIL:</small>
+            <h3 style="margin-top: -5px;"><?php echo $order->get_billing_email(); ?></h3>
+        </li>
+        <li>
+            <small>TOTAL:</small>
+            <h3 style="margin-top: -5px;"><?php echo $order->get_formatted_order_total(); ?></h3>
+        </li>
+    </ul>
+    <ul style="list-style-type: none; display: inline;">
+        <li>
+            <small>PAYMENT METHOD:</small>
+            <h3 style="margin-top: -5px;"><?php echo $order->get_payment_method_title(); ?></h3>
+        </li>
+    </ul>
+</body>
+</html>
