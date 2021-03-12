@@ -1,4 +1,7 @@
 <?php
+
+
+
 	$bool = true;
 
 	switch ($bool) {
@@ -10,5 +13,7 @@
 			echo "I'm FALSE";
 			break;
 	}
+
+	echo "WRONG";
 
 ?>
